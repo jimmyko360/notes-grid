@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {NotesProvider} from '../NotesProvider.jsx';
+import {NotesContext} from '../NotesProvider.jsx';
+import {NoteGrid} from './NoteGrid.jsx';
 
 export const App = () => {
   return (
-    <div>
-      Hello World
-    </div>
+    <NotesProvider>
+      <NoteGrid/>
+    </NotesProvider>
   )
 }
