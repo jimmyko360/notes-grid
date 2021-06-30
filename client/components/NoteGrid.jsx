@@ -6,12 +6,13 @@ export const NoteGrid = () => {
   const {notes} = useContext(NotesContext);
 
   return (
-    notes.map((text, index) => (
-      <Note
-        text={text}
-        index={index}
-
-      />)
-    )
+    <div className='notegrid'>
+      {notes.map((text, index) => (
+        <Note
+          text={text}
+          index={index}
+        />)
+      )}
+    </div>
   )
 }
