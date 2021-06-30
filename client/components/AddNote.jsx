@@ -10,9 +10,10 @@ export const AddNote = () => {
         onSubmit={(event)=>{
           event.preventDefault();
           createNote(event.target[0].value, notes.length);
+          event.target[0].value = '';
         }}
       >
-        <textarea rows="4" cols="50"/>
+        <textarea placeholder={'Start by typing your note here!'} rows="4" cols="50"/>
         <input type='submit' value='Add New Note'/>
       </form>
     </div>
