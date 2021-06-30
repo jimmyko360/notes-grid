@@ -16,7 +16,7 @@ export const AddNote = () => {
           event.target[0].value = '';
         }}
       >
-        <textarea placeholder={'Start by typing your note here!'} rows="4" cols="50"/>
+        <textarea placeholder={'Start by typing your note here!'} rows='4' cols='50'/>
         <input type='submit' value='Add New Note'/>
       </form>
     </div>
