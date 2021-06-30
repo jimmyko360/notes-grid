@@ -1,4 +1,16 @@
 #app{
   margin: auto;
   width: 1320px;
+
+  .submission{
+    display: flex;
+    margin: auto;
+    width: 50%;
+    color: #00a82d;
+
+    .title{
+      font-size: 30px;
+      font-weight: bolder;
+    }
+  }
 }

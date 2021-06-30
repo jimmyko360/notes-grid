@@ -6,6 +6,9 @@ export const AddNote = () => {
 
   return (
     <div className='submission'>
+      <p className='title'>
+        nEverNote
+      </p>
       <form
         onSubmit={(event)=>{
           event.preventDefault();
