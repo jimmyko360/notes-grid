@@ -3,11 +3,14 @@ import React, {useState, createContext} from 'react'
 export const NotesContext = createContext({});
 
 export const NotesProvider = ({children}) => {
-  let notesArray = [];
-  for (let i = 0; i < 36; i++) {
-    notesArray.push('New Note');
-  }
-  const [notes, setNotes] = useState(notesArray);
+  const [notes, setNotes] = useState([
+    'New Note',
+    'New Note',
+    'New Note',
+    'New Note',
+    'New Note',
+    'New Note'
+  ]);
   const [selected, setSelected] = useState({
     first: false,
     second: false
