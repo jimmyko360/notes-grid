@@ -7,7 +7,7 @@ export const Note = ({text, index}) => {
   const {editNote, deleteNote} = useContext(NotesContext);
 
   return (
-    <div>
+    <div className='note'>
       <button
         onClick={()=>{setEditing(!editing)}}
       >
