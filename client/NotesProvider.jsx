@@ -4,12 +4,12 @@ export const NotesContext = createContext({});
 
 export const NotesProvider = ({children}) => {
   const [notes, setNotes] = useState([
-    'New Note',
-    'New Note',
-    'New Note',
-    'New Note',
-    'New Note',
-    'New Note'
+    'first',
+    'second',
+    'third',
+    'fourth',
+    'fifth',
+    'sixth'
   ]);
   const [selected, setSelected] = useState([]);
 
@@ -20,6 +20,8 @@ export const NotesProvider = ({children}) => {
       createNote: (text, index) => {
         if (text.length > 255) {
           alert('Note must have maximum length of 255 characters')
+        } else if (text.length === 0) {
+          alert('Please enter your note in the form provided')
         } else {
           let newNote = [...notes];
           newNote[index] = text;
