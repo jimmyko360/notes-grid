@@ -32,10 +32,10 @@ export const Note = ({text, index}) => {
             setEditing(false);
           }}
         >
-          <input type='text' defaultValue={text}/>
+          <textarea type='text' defaultValue={text} rows='6' cols='24'/>
           <input type='submit' value={'Done'}/>
         </form>
-      : <p
+      : <p className='main'
           onClick={()=>{
             selectNotes(index);
           }}
