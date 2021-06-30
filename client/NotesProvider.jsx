@@ -3,14 +3,7 @@ import React, {useState, createContext} from 'react'
 export const NotesContext = createContext({});
 
 export const NotesProvider = ({children}) => {
-  const [notes, setNotes] = useState([
-    'first',
-    'second',
-    'third',
-    'fourth',
-    'fifth',
-    'sixth'
-  ]);
+  const [notes, setNotes] = useState([]);
   const [selected, setSelected] = useState([]);
 
   return (
@@ -18,7 +11,9 @@ export const NotesProvider = ({children}) => {
       notes,
       selected,
       createNote: (text, index) => {
-        if (text.length > 255) {
+        if (notes.length === 36) {
+          alert('You have reached the maximum amount of notes')
+        } else if (text.length > 255) {
           alert('Note must have maximum length of 255 characters')
         } else if (text.length === 0) {
           alert('Please enter your note in the form provided')
