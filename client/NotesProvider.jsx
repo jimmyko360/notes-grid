@@ -20,7 +20,7 @@ export const NotesProvider = ({children}) => {
     <NotesContext.Provider value={{
       notes,
       selected,
-      editNote: (text, index) => {
+      createNote: (text, index) => {
         if (text.length > 255) {
           console.log('Note can only be 255 characters long')
         } else {
@@ -31,7 +31,7 @@ export const NotesProvider = ({children}) => {
       },
       deleteNote: (index) => {
         let newNote = [...notes];
-        newNote[index] = 'New Note';
+        newNote.splice(index, 1);
         setNotes(newNote);
       }
     }}>

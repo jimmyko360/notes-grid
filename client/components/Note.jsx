@@ -4,7 +4,7 @@ import {NotesContext} from '../NotesProvider.jsx';
 export const Note = ({text, index}) => {
   const [editing, setEditing] = useState(false);
 
-  const {editNote, deleteNote} = useContext(NotesContext);
+  const {createNote, deleteNote} = useContext(NotesContext);
 
   return (
     <div className='note'>
@@ -21,7 +21,7 @@ export const Note = ({text, index}) => {
       {editing ?
         <form
           onSubmit={(event)=>{
-            editNote(event.target[0].value, index);
+            createNote(event.target[0].value, index);
             setEditing(false);
           }}
         >

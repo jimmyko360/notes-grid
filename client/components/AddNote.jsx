@@ -2,14 +2,14 @@ import React, {useContext} from 'react';
 import {NotesContext} from '../NotesProvider'
 
 export const AddNote = () => {
-  const {notes, editNote} = useContext(NotesContext);
+  const {notes, createNote} = useContext(NotesContext);
 
   return (
     <div className='submission'>
       <form
         onSubmit={(event)=>{
           event.preventDefault();
-          editNote(event.target[0].value, notes.length);
+          createNote(event.target[0].value, notes.length);
         }}
       >
         <textarea rows="4" cols="50"/>
