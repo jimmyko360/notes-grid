@@ -3,6 +3,15 @@
   width: 200px;
   border: 5px solid #00a82d;
   margin: 5px;
+
+  .main{
+    height: 100px;
+    overflow: scroll;
+  }
+
+  .main::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 #selected{
