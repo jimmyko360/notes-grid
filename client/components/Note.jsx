@@ -11,7 +11,10 @@ export const Note = ({text, index}) => {
   }, [selected])
 
   return (
-    <div className='note'>
+    <div
+      className='note'
+      id={selected[0] === index ? 'selected' : 'unselected'}
+    >
       <button
         onClick={()=>{setEditing(!editing)}}
       >
