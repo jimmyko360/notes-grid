@@ -18,12 +18,12 @@ export const Note = ({text, index}) => {
       <button
         onClick={()=>{setEditing(!editing)}}
       >
-        Edit Note
+        ✏️
       </button>
       <button
         onClick={()=>{deleteNote(index)}}
       >
-        X
+        ❌
       </button>
       {editing ?
         <form
@@ -32,8 +32,8 @@ export const Note = ({text, index}) => {
             setEditing(false);
           }}
         >
-          <textarea type='text' defaultValue={text} rows='6' cols='24'/>
-          <input type='submit' value={'Done'}/>
+          <textarea type='text' defaultValue={text} rows='5' cols='24'/>
+          <input type='submit' value={'✔️'}/>
         </form>
       : <p className='main'
           onClick={()=>{
