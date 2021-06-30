@@ -4,5 +4,5 @@
 ## Getting Started
 - Clone the repo to your machine
 - In your terminal, run:
-- `npm run build`
-- `npm start`
+  - `npm run build`
+  - `npm start`
