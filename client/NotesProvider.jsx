@@ -18,9 +18,13 @@ export const NotesProvider = ({children}) => {
       notes,
       selected,
       editNote: (text, index) => {
-        let newNote = [...notes];
-        newNote[index] = text;
-        setNotes(newNote);
+        if (text.length > 255) {
+          console.log('Note can only be 255 characters long')
+        } else {
+          let newNote = [...notes];
+          newNote[index] = text;
+          setNotes(newNote);
+        }
       },
       deleteNote: (index) => {
         let newNote = [...notes];
