@@ -11,10 +11,7 @@ export const NotesProvider = ({children}) => {
     'New Note',
     'New Note'
   ]);
-  const [selected, setSelected] = useState({
-    first: false,
-    second: false
-  });
+  const [selected, setSelected] = useState([]);
 
   return (
     <NotesContext.Provider value={{
@@ -22,7 +19,7 @@ export const NotesProvider = ({children}) => {
       selected,
       createNote: (text, index) => {
         if (text.length > 255) {
-          console.log('Note can only be 255 characters long')
+          alert('Note must have maximum length of 255 characters')
         } else {
           let newNote = [...notes];
           newNote[index] = text;
@@ -33,6 +30,27 @@ export const NotesProvider = ({children}) => {
         let newNote = [...notes];
         newNote.splice(index, 1);
         setNotes(newNote);
+      },
+      selectNotes: (index) => {
+        if (selected[0] === index) {
+          let newSelected = [...selected];
+          newSelected.pop();
+          setSelected(newSelected);
+        } else {
+          let newSelected = [...selected];
+          newSelected.push(index);
+          setSelected(newSelected);
+        }
+      },
+      swapNotes: (first, second) => {
+        if (selected.length === 2) {
+          let newNotes = [...notes];
+          let firstNote = newNotes[first];
+          newNotes[first] = newNotes[second];
+          newNotes[second] = firstNote;
+          setNotes(newNotes);
+          setSelected([]);
+        }
       }
     }}>
       {children}

@@ -1,10 +1,14 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {NotesContext} from '../NotesProvider.jsx';
 
 export const Note = ({text, index}) => {
   const [editing, setEditing] = useState(false);
 
-  const {createNote, deleteNote} = useContext(NotesContext);
+  const {selected, createNote, deleteNote, selectNotes, swapNotes} = useContext(NotesContext);
+
+  useEffect(()=>{
+    swapNotes(selected[0], selected[1]);
+  }, [selected])
 
   return (
     <div className='note'>
@@ -28,7 +32,14 @@ export const Note = ({text, index}) => {
           <input type='text' defaultValue={text}/>
           <input type='submit' value={'Done'}/>
         </form>
-      : text}
+      : <p
+          onClick={()=>{
+            selectNotes(index);
+          }}
+        >
+          {text}
+        </p>
+      }
     </div>
   )
 }
