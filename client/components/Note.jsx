@@ -11,7 +11,7 @@ export const Note = ({text, index}) => {
       <button
         onClick={()=>{setEditing(!editing)}}
       >
-        {text === 'New Note' ? 'Create Note' : 'Edit Note'}
+        Edit Note
       </button>
       <button
         onClick={()=>{deleteNote(index)}}
